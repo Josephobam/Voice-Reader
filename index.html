@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Text to Voice Converter</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<main>
+		<h1>Text to Voice Converter</h1>
+		<label for="voice-select">Voice</label>
+		<select id="voice-select" class="voice-select" aria-label="Choose a voice">
+			<option value="">Loading voices...</option>
+		</select>
+		<section class="speech-settings" aria-label="Speech settings">
+			<div class="speech-setting">
+				<div class="speech-setting-heading">
+					<label for="rate-control">Rate</label>
+					<output id="rate-value" for="rate-control">1.0x</output>
+				</div>
+				<input id="rate-control" type="range" min="0.5" max="2" step="0.1" value="1">
+			</div>
+			<div class="speech-setting">
+				<div class="speech-setting-heading">
+					<label for="pitch-control">Pitch</label>
+					<output id="pitch-value" for="pitch-control">1.0</output>
+				</div>
+				<input id="pitch-control" type="range" min="0" max="2" step="0.1" value="1">
+			</div>
+			<div class="speech-setting">
+				<div class="speech-setting-heading">
+					<label for="volume-control">Volume</label>
+					<output id="volume-value" for="volume-control">100%</output>
+				</div>
+				<input id="volume-control" type="range" min="0" max="1" step="0.1" value="1">
+			</div>
+		</section>
+		<section class="document-import" aria-label="Import a document">
+			<label for="document-input">Import a document</label>
+			<input id="document-input" type="file" accept=".txt,.pdf,.docx,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+			<p id="import-status" role="status" aria-live="polite" hidden></p>
+			<p id="import-error" role="alert" hidden></p>
+		</section>
+		<label for="text-input">Enter text</label>
+		<textarea id="text-input" rows="8" placeholder="Type or paste text here..."></textarea>
+        <p id="character-count">0 characters</p>
+		<button type="button" id="speak-button">Speak</button>
+		<button type="button" id="pause-button">Pause</button>
+		<button type="button" id="resume-button">Resume</button>
+		<button type="button" id="stop-button">Stop</button>
+        <button type="button" id="clear-button">Clear</button>
+        
+	</main>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+	<script src="https://unpkg.com/mammoth@1.9.0/mammoth.browser.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

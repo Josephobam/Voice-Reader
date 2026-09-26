@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #f8fafc;
+}
+
+main {
+    width: 100%;
+    max-width: 700px;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+}
+
+h1 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+label {
+    display: block;
+    margin: 25px 0 10px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+textarea {
+    width: 100%;
+    min-height: 220px;
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    outline: none;
+    resize: vertical;
+    background: rgba(15, 23, 42, 0.8);
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+textarea:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15);
+}
+
+.voice-select {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background: rgba(15, 23, 42, 0.8);
+    color: #ffffff;
+    font: inherit;
+}
+
+.voice-select:focus-visible {
+    outline: 3px solid rgba(96, 165, 250, 0.6);
+    outline-offset: 3px;
+}
+
+.speech-settings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.speech-setting-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.speech-setting-heading label {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.speech-setting-heading output {
+    color: #93c5fd;
+    font-variant-numeric: tabular-nums;
+}
+
+.speech-setting input[type="range"] {
+    width: 100%;
+    accent-color: #60a5fa;
+    cursor: pointer;
+}
+
+.speech-setting input[type="range"]:focus-visible {
+    outline: 3px solid rgba(96, 165, 250, 0.6);
+    outline-offset: 4px;
+}
+
+.document-import {
+    margin-top: 24px;
+}
+
+.document-import label {
+    margin-top: 0;
+}
+
+.document-import input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background: rgba(15, 23, 42, 0.8);
+    color: #f8fafc;
+    font: inherit;
+}
+
+.document-import input[type="file"]::file-selector-button {
+    margin-right: 12px;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 6px;
+    background: #2563eb;
+    color: #ffffff;
+    font: inherit;
+    cursor: pointer;
+}
+
+.document-import p {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.document-import [role="alert"] {
+    color: #fca5a5;
+}
+
+.document-import [role="status"] {
+    color: #93c5fd;
+}
+
+button {
+    margin-top: 20px;
+    padding: 13px 24px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#speak-button {
+    background: #2563eb;
+    color: white;
+    margin-right: 10px;
+}
+
+#stop-button {
+    background: #dc2626;
+    color: white;
+}
+
+#pause-button {
+    background: #d97706;
+    color: white;
+}
+
+#resume-button {
+    background: #059669;
+    color: white;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.6);
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    main {
+        padding: 25px 20px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    textarea {
+        min-height: 180px;
+    }
+
+    button {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 12px;
+    }
+}
